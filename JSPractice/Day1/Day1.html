@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS Practice</title>
+    <script src="Day1.js"></script> <!-- Link to the JavaScript file externally with the results function  -->
+</head>
+<style>
+    #appContainer {
+        max-width: 700px;
+        margin: 60px auto;
+        padding: 30px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        font-family: "Arial, sans-serif";
+        background-color: #f9f9f9;
+    }
+</style>
+
+<body>
+    <div id=appContainer>
+
+        <h1 style="text-align:center;">JS Practice Day1</h1>
+
+        <h2>User Info</h2>
+        <label>Name: <input type="text" id="nameInput"></label><br><br>
+        <label>Age: <input type="number" id="ageInput"></label><br><br>
+        <label>Are you a student? <input type="checkbox" id="isStudentInput"></label><br><br>
+
+        <h2>Operator Inputs</h2>
+        <label>Value for a: <input type="number" id="aInput"></label><br><br>
+        <label>Value for b: <input type="number" id="bInput"></label><br><br>
+
+        <button id="submitBtn"
+            style="padding:10px 20px; background-color:rgb(207, 233, 9); color:rgb(15, 15, 15); border:none; border-radius:5px;" onclick="results()">Calculate</button>
+
+        <div id="result" style="margin-top:25px;"></div>
+    </div>
+    
+</body>
