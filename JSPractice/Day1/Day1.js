@@ -9,9 +9,9 @@
 **********************************************************************************************************************************************************
   today concept is about variables, data types, and operators.
 *******************************************************************************************************************************************************************
-  variables are used to store data in a program. we can use var, let, and const to declare a variable. 
+  variables are used to store data in a program. we can use var, const, and const to declare a variable. 
   var is the old way to declare a variable, it is function scoped and can be re-declared and updated. 
-  let is the new way to declare a variable, it is block scoped and can be updated but not re-declared. 
+  const is the new way to declare a variable, it is block scoped and can be updated but not re-declared. 
   const is the new way to declare a constant variable, it is block scoped and cannot be updated or re-declared.
 
   data types are used to define the type of data that a variable can hold.
@@ -33,49 +33,49 @@
   // bitwise operators are used to perform bitwise operations on binary numbers 
      
 
-  now let's see some examples of variables, data types, and operators in js:
+  now const's see some examples of variables, data types, and operators in js:
 */
 // variables
 
 var names = "sai";
-let age = 25;
-const isStudent = true;
+const age = 25;
+let isStudent = true;
 
 // data types
 
-let str = "hello world"; // string
-let num = 10; // number
-let bool = false; // boolean
-let obj = { name: "sai", age: 25 }; // object
-let sym = Symbol("unique"); // symbol
+const str = "hello world"; // string
+const num = 10; // number
+const bool = false; // boolean
+const obj = { name: "sai", age: 25 }; // object
+const sym = Symbol("unique"); // symbol
 // operators
-let a = 10;
-let b = 5;
-let sum = a + b; // 15
-let difference = a - b; // 5
-let product = a * b; // 50
-let quotient = a / b; // 2
-let remainder = a % b; // 0
-let increment = a++; // 10
-let decrement = b--; // 5
-let isEqual = a == b; // false
-let isStrictEqual = a === b; // false
-let isNotEqual = a != b; // true
-let isStrictNotEqual = a !== b; // true
-let isGreaterThan = a > b; // true
-let isLessThan = a < b; // false
-let isGreaterThanOrEqual = a >= b; // true
-let isLessThanOrEqual = a <= b; // false
-let and = a > 5 && b < 10; // true
-let or = a > 5 || b < 5; // true
-let not = !(a > 5); // false
-let bitwiseAND = a & b; // 0
-let bitwiseOR = a | b; // 15
-let bitwiseXOR = a ^ b; // 15
-let bitwiseNOT = ~a; // -11
-let bitwiseLeftShift = a << 1;
-let bitwiseRightShift = a >> 1;
-let bitwiseUnsignedRightShift = a >>> 1;
+const a = 10;
+const b = 5;
+const sum = a + b; // 15
+const difference = a - b; // 5
+const product = a * b; // 50
+const quotient = a / b; // 2
+const remainder = a % b; // 0
+const increment = a++; // 10
+const decrement = b--; // 5
+const isEqual = a == b; // false
+const isStrictEqual = a === b; // false
+const isNotEqual = a != b; // true
+const isStrictNotEqual = a !== b; // true
+const isGreaterThan = a > b; // true
+const isLessThan = a < b; // false
+const isGreaterThanOrEqual = a >= b; // true
+const isLessThanOrEqual = a <= b; // false
+const and = a > 5 && b < 10; // true
+const or = a > 5 || b < 5; // true
+const not = !(a > 5); // false
+const bitwiseAND = a & b; // 0
+const bitwiseOR = a | b; // 15
+const bitwiseXOR = a ^ b; // 15
+const bitwiseNOT = ~a; // -11
+const bitwiseLeftShift = a << 1;
+const bitwiseRightShift = a >> 1;
+const bitwiseUnsignedRightShift = a >>> 1;
 
 // build a html and css page for above concepts and display:  them  on the page using js dynamically.
 
