@@ -1,0 +1,26 @@
+<!-- this file im practicing to build a bingo game from scratch
+functionality:
+1. generate a 5x5 bingo card with random numbers between 1 and 75 
+2. allow the user to mark numbers on the card as they are called 
+3. check for winning patterns (e.g., horizontal, vertical, diagonal)
+ 4. display a message when the user wins.
+-->
+<!doctype html>
+  <html lang="en">
+     <head> 
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Bingo Game</title> <link rel="stylesheet" href="Day3.2.css"> 
+            <script src="Day3.2.js"></script> 
+    </head> 
+        <body>
+             <div id="bingoContainer"> 
+                <h1 style="text-align:center;">Bingo Game</h1> 
+                <button onclick="generateBingoCard()">Generate Bingo Card</button> 
+                <div id="bingoCard" style="margin-top:25px;"></div> 
+                <div id="message" style="margin-top:25px; text-align:center;"></div> 
+                
+            </div>
+         </body> 
+   </html>
