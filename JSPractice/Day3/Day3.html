@@ -1,0 +1,69 @@
+<!-- today practice is building a simple calculator  to make it functional  using JavaScript  and html, css where it can perform all
+  1. arithmetic operators: +, -, *, /, %, ++, -- 
+  2. assignment operators: =, +=, -=, *=, /=, %= : 
+  3. comparison operators: ==, ===, !=, !==, >, <, >=, <=
+  4. logical operators: &&, ||, !
+  5. bitwise operators: &, |, ^, ~, <<, >>, >>> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="Day3.css">
+    <script src="Day3.js"></script>
+</head>
+
+<body>
+    <div id="calculatorContainer">
+        <h1 style="text-align:center;">Simple Calculator</h1>
+        <label for="num1">Number 1:</label>
+        <input type="text" id="num1" placeholder="Enter first number"><br><br>
+
+        <label for="num2">Number 2:</label>
+        <input type="text" id="num2" placeholder="Enter second number"><br><br>
+
+        <label for="operator">Select the operator:</label>
+       
+        <div id="operatorButtons">
+            <button onclick="performOperation('+')">+</button>
+            <button onclick="performOperation('-')">-</button>
+            <button onclick="performOperation('*')">*</button>
+            <button onclick="performOperation('/')">/</button>
+            <button onclick="performOperation('%')">%</button>
+            <button onclick="performOperation('++')">++</button>
+            <button onclick="performOperation('--')">--</button>
+            <button onclick="performOperation('=')">=</button>
+            <button onclick="performOperation('+=')">+=</button>
+            <button onclick="performOperation('-=')">-=</button>
+            <button onclick="performOperation('*=')">*=</button>
+            <button onclick="performOperation('/=')">/=</button>
+            <button onclick="performOperation('%=')">%=</button>
+            <button onclick="performOperation('==')">==</button>
+            <button onclick="performOperation('===')">===</button>
+            <button onclick="performOperation('!=')">!=</button>
+            <button onclick="performOperation('!==')">!==</button>
+            <button onclick="performOperation('>')">></button>
+            <button onclick="performOperation('<')"><</button>
+            <button onclick="performOperation('>=')">>=</button>
+            <button onclick="performOperation('<=')"><=</button>
+            <button onclick="performOperation('&&')">&&</button>
+            <button onclick="performOperation('||')">||</button>
+            <button onclick="performOperation('!')">!</button>
+            <button onclick="performOperation('&')">&</button>
+            <button onclick="performOperation('|')">|</button>
+            <button onclick="performOperation('^')">^</button>
+            <button onclick="performOperation('~')">~</button>
+            <button onclick="performOperation('<<')"><<</button>
+            <button onclick="performOperation('>>')">>></button>
+            <button onclick="performOperation('>>>')">>>></button>
+            <button onclick="performOperation('clear')">Clear</button>
+        </div>
+        </select><br><br>
+        <div id="result" style="margin-top:25px;"></div>
+    </div>
+</body>
+
+</html>
