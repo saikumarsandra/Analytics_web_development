@@ -1,0 +1,82 @@
+<!-- build a simple html that explains the different types of functions in JavaScript -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions</title>
+</head>
+<body>
+    <h1>JavaScript Functions</h1>
+    <p>This page explains the different types of functions in JavaScript.</p>
+    <h2>1. Function Declarations</h2>
+    <p>Function declarations are the most common way to define a function. They are hoisted, which means they can be called before they are defined in the code.</p>
+    <pre>
+        <code>
+            function greet(name) {
+                return "Hello, " + name + "!"; 
+            }
+        </code>
+    </pre>
+    <h2>2. Function Expressions</h2>
+    <p>Function expressions are defined as part of a larger expression, such as a variable assignment. They are not hoisted, so they cannot be called before they are defined.</p>
+    <pre>
+        <code>
+            const greet = function(name) {
+                return "Hello, " + name + "!"; 
+            };
+        </code> 
+    </pre>
+    <h2>3. Arrow Functions</h2>
+    <p>Arrow functions are a more concise way to write functions in JavaScript. They are especially useful for simple functions and when you want to preserve the value of `this`.</p>
+    <pre>
+        <code>
+            const greet = (name) => {
+                return "Hello, " + name + "!"; 
+            };
+        </code> 
+    </pre>
+    <h2>4. Anonymous Functions</h2>
+    <p>Anonymous functions are functions that do not have a name. They are often used as arguments to other functions or as immediately invoked function expressions (IIFEs).</p>
+    <pre>
+        <code>
+            setTimeout(function() {
+                console.log("This is an anonymous function!");
+            }, 1000);
+        </code> 
+    </pre>
+    <h2>5. Immediately Invoked Function Expressions (IIFEs)</h2>
+    <p>IIFEs are functions that are defined and immediately executed. They are often used to create a new scope and avoid polluting the global namespace.</p>
+    <pre>  
+        <code>
+            (function() {
+                console.log("This is an IIFE!");
+            })();
+        </code>
+    </pre>
+    <h2>6. Generator Functions</h2>
+    <p>Generator functions are a special type of function that can be paused and resumed. They are defined using the `function*` syntax and use the `yield` keyword to pause execution.</p>
+    <pre>
+        <code>
+            function* generator() {
+                yield "Hello";
+                yield "World";
+            }
+        </code>
+    </pre>
+    <h2>7. Async Functions</h2>
+    <p>Async functions are a special type of function that allows you to write asynchronous code in a more synchronous manner. They are defined using the `async` keyword and use the `await` keyword to wait for promises to resolve.</p>
+    <pre>
+        <code>
+            async function fetchData() {
+                const response = await fetch('https://api.example.com/data');
+                const data = await response.json();
+                return data;
+            }
+        </code>
+    </pre>
+    <h2>Conclusion</h2>
+    <p>JavaScript offers a variety of ways to define functions, each with its own use cases and advantages. Understanding these different types of functions can help you write more efficient and readable code.</p>
+    
+</body>
+</html> 

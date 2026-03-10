@@ -1,0 +1,21 @@
+pre,code    {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 10px;
+    overflow-x: auto;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+p {
+    margin: 20px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+h2 {
+    margin-top: 40px;
+    font-size: 24px;
+    color: #333;
+}
