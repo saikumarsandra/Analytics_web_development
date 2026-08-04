@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop all products — The Considered Market</title>
+  <meta name="description" content="Browse the full catalogue at The Considered Market — outdoors, home, tech and fashion essentials." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body data-page="shop">
+
+  <div id="announcement-banner" class="announcement-banner" hidden>
+    <div class="container">
+      <span data-banner-text></span>
+      <button type="button" class="banner-close" aria-label="Dismiss announcement">✕</button>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">The Considered <span class="brand-mark">Market</span></a>
+
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="shop.html" data-page="shop">Shop</a>
+        <a href="index.html#deals" data-page="shop">Categories</a>
+        <a href="account/login.html" data-auth="guest">Login</a>
+        <a href="account/profile.html" data-auth="user" hidden>My Account</a>
+        <a href="admin/dashboard.html" data-auth="admin" hidden>Admin</a>
+        <a href="#" data-auth="user" data-logout hidden>Log out</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="icon-btn" href="cart.html" aria-label="View cart">
+          🛍
+          <span class="cart-count" data-cart-count hidden>0</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <div class="container">
+        <span class="eyebrow">Full catalogue</span>
+        <h1>Shop all products</h1>
+        <p>14 considered pieces across outdoors, home, tech and fashion.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="plp-layout">
+        <aside class="filters" aria-label="Filter products">
+          <div class="filter-group">
+            <h3>Category</h3>
+            <div id="filter-categories"></div>
+          </div>
+          <div class="filter-group">
+            <h3>Price</h3>
+            <div class="field" style="margin-bottom:0;">
+              <select id="filter-price" aria-label="Filter by price"></select>
+            </div>
+          </div>
+          <div class="filter-group">
+            <button type="button" id="filter-clear" class="btn-text filter-clear">Clear all filters</button>
+          </div>
+        </aside>
+
+        <div>
+          <div class="toolbar">
+            <div class="toolbar-search field" style="margin-bottom:0;">
+              <label for="plp-search" class="sr-only" style="position:absolute;left:-9999px;">Search products</label>
+              <input type="search" id="plp-search" placeholder="Search products…" />
+            </div>
+            <div class="toolbar-right">
+              <span class="toolbar-count" id="plp-count"></span>
+              <div class="field" style="margin-bottom:0;">
+                <select id="sort-select" class="toolbar-sort" aria-label="Sort products"></select>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-grid" id="plp-grid" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">The Considered <span class="brand-mark">Market</span></a>
+          <p>Considered essentials for daily life — outdoors, home, tech and everyday carry.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="shop.html">All products</a></li>
+            <li><a href="shop.html#outdoors">Outdoors</a></li>
+            <li><a href="shop.html#home">Home</a></li>
+            <li><a href="shop.html#tech">Tech</a></li>
+            <li><a href="shop.html#fashion">Fashion</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Account</h4>
+          <ul>
+            <li><a href="account/login.html">Login</a></li>
+            <li><a href="account/profile.html">My orders</a></li>
+            <li><a href="cart.html">Cart</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Newsletter</h4>
+          <form id="newsletter-form" novalidate>
+            <div class="field">
+              <label for="newsletter-email">Email address</label>
+              <input type="email" id="newsletter-email" name="email" placeholder="you@example.com" required />
+              <div class="field-error-msg">Please enter a valid email address.</div>
+            </div>
+            <div class="hp-field" aria-hidden="true">
+              <label for="newsletter-company">Company</label>
+              <input type="text" id="newsletter-company" name="company" tabindex="-1" autocomplete="off" />
+            </div>
+            <button type="submit" class="btn btn-gold btn-block">Subscribe</button>
+          </form>
+          <p class="newsletter-success" role="status">✓ You're on the list — check your inbox.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 The Considered Market. Demo storefront — built by Sai Kumar Sandra.</span>
+        <span>Privacy · Terms · Accessibility</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cookie-consent" class="cookie-consent" role="dialog" aria-label="Cookie consent" hidden>
+    <p><strong>We use cookies.</strong> This helps us remember your cart and preferences. Manage your choice below.</p>
+    <div class="cookie-actions">
+      <button type="button" class="btn btn-primary btn-small" data-cookie-accept>Accept all</button>
+      <button type="button" class="btn btn-outline btn-small" data-cookie-reject>Reject non-essential</button>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/shop.js"></script>
+</body>
+</html>

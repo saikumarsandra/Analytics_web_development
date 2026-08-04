@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Considered Market — Considered essentials for daily life</title>
+  <meta name="description" content="A small, well-made catalogue of outdoor, home, tech and everyday essentials." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body data-page="home">
+
+  <div id="announcement-banner" class="announcement-banner" hidden>
+    <div class="container">
+      <span data-banner-text></span>
+      <button type="button" class="banner-close" aria-label="Dismiss announcement">✕</button>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">The Considered <span class="brand-mark">Market</span></a>
+
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="shop.html" data-page="shop">Shop</a>
+        <a href="#deals" data-page="shop">Categories</a>
+        <a href="account/login.html" data-auth="guest">Login</a>
+        <a href="account/profile.html" data-auth="user" hidden>My Account</a>
+        <a href="admin/dashboard.html" data-auth="admin" hidden>Admin</a>
+        <a href="#" data-auth="user" data-logout hidden>Log out</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="icon-btn" href="cart.html" aria-label="View cart">
+          🛍
+          <span class="cart-count" data-cart-count hidden>0</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-copy">
+          <span class="eyebrow">New season edit</span>
+          <h1>Considered essentials,<br />made to be used daily.</h1>
+          <p>A small, well-made catalogue spanning outdoors, home, tech and everyday carry — chosen for quality over quantity, and priced honestly.</p>
+          <div class="hero-actions">
+            <a href="shop.html" class="btn btn-primary">Shop the collection</a>
+            <a href="shop.html#outdoors" class="btn btn-outline">Explore categories</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>14</strong><span>Curated pieces</span></div>
+            <div><strong>4.6★</strong><span>Average rating</span></div>
+            <div><strong>4</strong><span>Categories</span></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="https://images.unsplash.com/photo-1756902368926-eb9e5e9d2a69?auto=format&fit=crop&w=1200&q=80" alt="Noise-Cancelling Earbuds" />
+          <div class="hero-visual-card">
+            <strong>Noise-Cancelling Earbuds</strong>
+            <span>25% off today only</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-bottom:0;">
+      <div class="container">
+        <div class="value-strip">
+          <div class="value-item">
+            <div class="value-icon">🚚</div>
+            <h3>Free shipping</h3>
+            <p>On every order, no minimum.</p>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">↺</div>
+            <h3>30-day returns</h3>
+            <p>Simple, no-questions returns.</p>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🔒</div>
+            <h3>Secure checkout</h3>
+            <p>Your details stay protected.</p>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">✦</div>
+            <h3>Considered quality</h3>
+            <p>Every product hand-selected.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section brand-story" id="brand-story">
+      <div class="container">
+        <span class="eyebrow brand-story-reveal">The</span>
+        <h2 class="brand-story-heading brand-story-reveal"><span class="brand-story-rotator">Considered</span> Market</h2>
+        <div class="brand-story-rule"></div>
+        <p class="brand-story-reveal">Every product here earns its place through one filter: would we actually keep using it? "Considered" is the standard — chosen over trending, durable over disposable. "Market" is the format — one home for outdoors, home, tech and everyday carry, curated rather than endless. A small, honest place to shop less, and shop better.</p>
+      </div>
+    </section>
+
+    <div id="category-rails"></div>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Stay in touch</span>
+          <h2>Get 10% off your first order</h2>
+          <p>Sign up for restocks, new arrivals, and the occasional considered discount. No spam, unsubscribe any time.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">The Considered <span class="brand-mark">Market</span></a>
+          <p>Considered essentials for daily life — outdoors, home, tech and everyday carry.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="shop.html">All products</a></li>
+            <li><a href="shop.html#outdoors">Outdoors</a></li>
+            <li><a href="shop.html#home">Home</a></li>
+            <li><a href="shop.html#tech">Tech</a></li>
+            <li><a href="shop.html#fashion">Fashion</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Account</h4>
+          <ul>
+            <li><a href="account/login.html">Login</a></li>
+            <li><a href="account/profile.html">My orders</a></li>
+            <li><a href="cart.html">Cart</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Newsletter</h4>
+          <form id="newsletter-form" novalidate>
+            <div class="field">
+              <label for="newsletter-email">Email address</label>
+              <input type="email" id="newsletter-email" name="email" placeholder="you@example.com" required />
+              <div class="field-error-msg">Please enter a valid email address.</div>
+            </div>
+            <div class="hp-field" aria-hidden="true">
+              <label for="newsletter-company">Company</label>
+              <input type="text" id="newsletter-company" name="company" tabindex="-1" autocomplete="off" />
+            </div>
+            <button type="submit" class="btn btn-gold btn-block">Subscribe</button>
+          </form>
+          <p class="newsletter-success" role="status">✓ You're on the list — check your inbox.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 The Considered Market. Demo storefront — built by Sai Kumar Sandra.</span>
+        <span>Privacy · Terms · Accessibility</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cookie-consent" class="cookie-consent" role="dialog" aria-label="Cookie consent" hidden>
+    <p><strong>We use cookies.</strong> This helps us remember your cart and preferences. Manage your choice below.</p>
+    <div class="cookie-actions">
+      <button type="button" class="btn btn-primary btn-small" data-cookie-accept>Accept all</button>
+      <button type="button" class="btn btn-outline btn-small" data-cookie-reject>Reject non-essential</button>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/brand-story.js"></script>
+</body>
+</html>
