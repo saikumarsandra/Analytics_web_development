@@ -9,10 +9,12 @@ This is a personal training project, built a little at a time on my own time, to
 ## Features
 
 - **Home** (`index.html`) — dismissible announcement banner, hero, an animated "brand story" section (scroll-reveal + word-cycling, respects `prefers-reduced-motion` with a manual preview override), and Amazon-style category rails covering the full catalogue
-- **Shop** (`shop.html`) — live search, category and price filters, sorting, and a result count — all client-side
-- **Product detail** (`product.html?id=...`) — gallery, quantity + add-to-cart, "you may also like" recommendations, a review feed with a working "write a review" feedback form, and a **notify-me-when-back-in-stock** form for out-of-stock items
+- **Shop** (`shop.html`) — live search, category and price filters, sorting, a result count, and a scroll-triggered promo popup (shown once per session, past the halfway point of the page) — all client-side
+- **Product detail** (`product.html?id=...`) — gallery, quantity + add-to-cart, "you may also like" recommendations, a review feed with a working "write a review" feedback form, a **notify-me-when-back-in-stock** form for out-of-stock items, and the same scroll-triggered promo popup as the shop page
 - **Cart** (`cart.html`) — quantity editing, discount codes, "frequently bought together", and an exit-intent popup offering a discount when a visitor tries to leave with items still in their cart
 - **Checkout** (`checkout.html`) — validated shipping/payment form (demo only — no real payment is processed) with an order confirmation modal
+- **Account** (`account/login.html`, `account/profile.html`) — mock login (demo admin/shopper accounts), editable display name, order history
+- **Admin** (`admin/dashboard.html`, `admin/products.html`, `admin/banners.html`) — order/revenue stats, full product CRUD, and live-editable site-wide banner/popup config — all guarded, redirecting to login if you're not signed in as admin
 - Site-wide cookie consent, auth-aware navigation (mock login), and a persistent cart/session/order layer
 
 ## Tech approach
@@ -31,12 +33,16 @@ ecommerce-app/
 ├── css/
 │   ├── style.css        — design tokens, layout, header/footer, buttons, forms
 │   └── components.css   — hero, product cards, modals, PLP/PDP/cart/checkout layouts
+├── account/login.html, account/profile.html
+├── admin/dashboard.html, admin/products.html, admin/banners.html
 ├── js/
 │   ├── data.js           — mock product catalogue + demo accounts
 │   ├── store.js           — localStorage data layer (cart, orders, session, reviews, config)
 │   ├── utils.js            — focus-trap, exit-intent, countdown, toast, debounce helpers
-│   ├── nav.js               — shared header/footer behaviour, product card renderer
-│   ├── home.js, shop.js, product.js, cart.js, checkout.js  — one file per page
+│   ├── nav.js               — shared header/footer behaviour, product card renderer, auth guard
+│   ├── home.js, shop.js, product.js, cart.js, checkout.js  — one file per shopper page
+│   ├── login.js, profile.js — account pages
+│   ├── admin-dashboard.js, admin-products.js, admin-banners.js — admin pages
 │   └── brand-story.js        — scroll-reveal + word rotation for the home page
 ```
 
@@ -49,8 +55,8 @@ No install, no build. Either:
 
 Demo login: `admin@demo.com` / `user@demo.com`, any password.
 
-## What's next
+## Status
 
-Account pages (login/profile) and an admin area (product management, banner/popup configuration) are the remaining pieces of the original plan — built incrementally, a page or two at a time.
+All pages from the original plan are built: the full shopper flow (home → shop → product → cart → checkout), account (login/profile), and admin (dashboard/products/banners). Further work from here would be enhancements beyond the original scope rather than missing pieces.
 
 Built by [Sai Kumar Sandra](https://github.com/saikumarsandra).

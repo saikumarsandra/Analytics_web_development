@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Account — The Considered Market</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body data-page="profile">
+
+  <div id="announcement-banner" class="announcement-banner" hidden>
+    <div class="container">
+      <span data-banner-text></span>
+      <button type="button" class="banner-close" aria-label="Dismiss announcement">✕</button>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="brand">The Considered <span class="brand-mark">Market</span></a>
+
+      <nav class="main-nav" id="main-nav">
+        <a href="../index.html" data-page="home">Home</a>
+        <a href="../shop.html" data-page="shop">Shop</a>
+        <a href="../index.html#deals" data-page="shop">Categories</a>
+        <a href="login.html" data-auth="guest">Login</a>
+        <a href="profile.html" data-auth="user" hidden>My Account</a>
+        <a href="../admin/dashboard.html" data-auth="admin" hidden>Admin</a>
+        <a href="#" data-auth="user" data-logout hidden>Log out</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="icon-btn" href="../cart.html" aria-label="View cart">
+          🛍
+          <span class="cart-count" data-cart-count hidden>0</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <div class="container">
+        <span class="eyebrow">Account</span>
+        <h1>My account</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="pdp-grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="admin-panel">
+          <h2>Account details</h2>
+          <p style="font-size:0.9rem;"><strong id="profile-name"></strong> — <span id="profile-role"></span><br /><span id="profile-email" style="color:var(--ink-soft);"></span></p>
+
+          <form id="profile-form" novalidate>
+            <div class="field">
+              <label for="display-name-input">Display name</label>
+              <input type="text" id="display-name-input" name="name" required />
+            </div>
+            <button type="submit" class="btn btn-outline">Save changes</button>
+          </form>
+
+          <button type="button" class="btn btn-text" data-logout style="margin-top:var(--space-5);">Log out</button>
+        </div>
+
+        <div class="admin-panel">
+          <h2>Order history</h2>
+          <div id="order-history"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="brand">The Considered <span class="brand-mark">Market</span></a>
+          <p>Considered essentials for daily life — outdoors, home, tech and everyday carry.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="../shop.html">All products</a></li>
+            <li><a href="../shop.html#outdoors">Outdoors</a></li>
+            <li><a href="../shop.html#home">Home</a></li>
+            <li><a href="../shop.html#tech">Tech</a></li>
+            <li><a href="../shop.html#fashion">Fashion</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Account</h4>
+          <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="profile.html">My orders</a></li>
+            <li><a href="../cart.html">Cart</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Newsletter</h4>
+          <form id="newsletter-form" novalidate>
+            <div class="field">
+              <label for="newsletter-email">Email address</label>
+              <input type="email" id="newsletter-email" name="email" placeholder="you@example.com" required />
+              <div class="field-error-msg">Please enter a valid email address.</div>
+            </div>
+            <div class="hp-field" aria-hidden="true">
+              <label for="newsletter-company">Company</label>
+              <input type="text" id="newsletter-company" name="company" tabindex="-1" autocomplete="off" />
+            </div>
+            <button type="submit" class="btn btn-gold btn-block">Subscribe</button>
+          </form>
+          <p class="newsletter-success" role="status">✓ You're on the list — check your inbox.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 The Considered Market. Demo storefront — built by Sai Kumar Sandra.</span>
+        <span>Privacy · Terms · Accessibility</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cookie-consent" class="cookie-consent" role="dialog" aria-label="Cookie consent" hidden>
+    <p><strong>We use cookies.</strong> This helps us remember your cart and preferences. Manage your choice below.</p>
+    <div class="cookie-actions">
+      <button type="button" class="btn btn-primary btn-small" data-cookie-accept>Accept all</button>
+      <button type="button" class="btn btn-outline btn-small" data-cookie-reject>Reject non-essential</button>
+    </div>
+  </div>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/store.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/chat-assistant.js"></script>
+  <script src="../js/profile.js"></script>
+</body>
+</html>

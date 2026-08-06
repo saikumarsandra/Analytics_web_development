@@ -145,10 +145,26 @@
     </div>
   </div>
 
+  <div id="scroll-popup-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Special offer" hidden>
+    <div class="modal-card">
+      <button type="button" class="modal-close" aria-label="Close" data-modal-close>✕</button>
+      <span class="eyebrow modal-eyebrow">Still browsing?</span>
+      <h3 id="scroll-popup-title">Here's a little something</h3>
+      <p id="scroll-popup-body"></p>
+      <div class="modal-code" id="scroll-popup-code"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-primary" id="scroll-popup-apply">Apply to my cart</button>
+        <button type="button" class="btn btn-text" data-modal-close>No thanks</button>
+      </div>
+    </div>
+  </div>
+
   <script src="js/data.js"></script>
   <script src="js/store.js"></script>
   <script src="js/utils.js"></script>
   <script src="js/nav.js"></script>
+  <script src="js/chat-assistant.js"></script>
   <script src="js/shop.js"></script>
+  <script src="js/scroll-popup.js"></script>
 </body>
 </html>

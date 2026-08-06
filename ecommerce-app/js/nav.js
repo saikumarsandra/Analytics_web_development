@@ -54,7 +54,8 @@ const Nav = (() => {
       btn.addEventListener("click", (e) => {
         e.preventDefault();
         Store.logout();
-        window.location.href = "index.html";
+        const inSubfolder = /\/(account|admin)\//.test(window.location.pathname);
+        window.location.href = inSubfolder ? "../index.html" : "index.html";
       });
     });
   }
@@ -190,6 +191,17 @@ const Nav = (() => {
     render();
   }
 
+  function guardSession(requiredRole) {
+    const session = Store.getSession();
+    const ok = !!session && (!requiredRole || session.role === requiredRole);
+    if (!ok) {
+      const path = window.location.pathname;
+      const loginUrl = path.includes("/admin/") ? "../account/login.html" : path.includes("/account/") ? "login.html" : "account/login.html";
+      window.location.href = loginUrl;
+    }
+    return ok;
+  }
+
   function init() {
     initMobileToggle();
     initActiveLink();
@@ -203,5 +215,5 @@ const Nav = (() => {
 
   document.addEventListener("DOMContentLoaded", init);
 
-  return { renderStars, productCardHtml, initAddToCartButtons };
+  return { renderStars, productCardHtml, initAddToCartButtons, guardSession };
 })();

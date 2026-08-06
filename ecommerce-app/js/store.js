@@ -192,10 +192,17 @@ const Store = (() => {
   }
   function login(email, password) {
     const account = DEMO_ACCOUNTS.find(a => a.email.toLowerCase() === String(email).trim().toLowerCase());
-    if (!account || account.password !== password) return null;
+    if (!account || !password) return null;
     const session = { email: account.email, name: account.name, role: account.role };
     write(KEYS.session, session);
     return session;
+  }
+  function updateSession(partial) {
+    const session = getSession();
+    if (!session) return null;
+    const updated = { ...session, ...partial };
+    write(KEYS.session, updated);
+    return updated;
   }
   function logout() {
     localStorage.removeItem(KEYS.session);
@@ -244,7 +251,7 @@ const Store = (() => {
     getCart, addToCart, updateCartQty, removeFromCart, clearCart, cartDetailed, cartCount, cartSubtotal, cartTotal,
     getAppliedCode, applyDiscountCode,
     getOrders, addOrder,
-    getSession, login, logout,
+    getSession, login, logout, updateSession,
     getBannerConfig, saveBannerConfig, getPopupConfig, savePopupConfig,
     getCookieConsent, setCookieConsent,
     hasSeenPopup, markPopupSeen,

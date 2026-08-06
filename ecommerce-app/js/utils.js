@@ -76,6 +76,21 @@ const Utils = (() => {
     });
   }
 
+  function onScrollPastThreshold(ratio, callback) {
+    let fired = false;
+    function check() {
+      if (fired) return;
+      const scrolled = window.scrollY + window.innerHeight;
+      const total = document.documentElement.scrollHeight;
+      if (total > 0 && scrolled / total >= ratio) {
+        fired = true;
+        window.removeEventListener("scroll", check);
+        callback();
+      }
+    }
+    window.addEventListener("scroll", check, { passive: true });
+  }
+
   function startCountdown(el, deadline, onDone) {
     function tick() {
       const remaining = deadline - Date.now();
@@ -122,5 +137,5 @@ const Utils = (() => {
     return !prefersReducedMotion() || document.documentElement.classList.contains("motion-force");
   }
 
-  return { qs, qsa, formatCurrency, escapeHtml, debounce, trapFocus, openModal, closeModal, onExitIntent, startCountdown, toast, prefersReducedMotion, motionEnabled };
+  return { qs, qsa, formatCurrency, escapeHtml, debounce, trapFocus, openModal, closeModal, onExitIntent, onScrollPastThreshold, startCountdown, toast, prefersReducedMotion, motionEnabled };
 })();
