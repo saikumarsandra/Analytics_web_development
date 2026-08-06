@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout — The Considered Market</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body data-page="checkout">
+
+  <div id="announcement-banner" class="announcement-banner" hidden>
+    <div class="container">
+      <span data-banner-text></span>
+      <button type="button" class="banner-close" aria-label="Dismiss announcement">✕</button>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">The Considered <span class="brand-mark">Market</span></a>
+
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="shop.html" data-page="shop">Shop</a>
+        <a href="index.html#deals" data-page="shop">Categories</a>
+        <a href="account/login.html" data-auth="guest">Login</a>
+        <a href="account/profile.html" data-auth="user" hidden>My Account</a>
+        <a href="admin/dashboard.html" data-auth="admin" hidden>Admin</a>
+        <a href="#" data-auth="user" data-logout hidden>Log out</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="icon-btn" href="cart.html" aria-label="View cart">
+          🛍
+          <span class="cart-count" data-cart-count hidden>0</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <div class="container">
+        <span class="eyebrow">Step 2 of 2</span>
+        <h1>Checkout</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="checkout-layout">
+        <form id="checkout-form" novalidate>
+          <div class="checkout-section">
+            <h2>Shipping details</h2>
+            <div class="field">
+              <label for="full-name">Full name</label>
+              <input type="text" id="full-name" name="full-name" required />
+              <div class="field-error-msg">Please enter your full name.</div>
+            </div>
+            <div class="field">
+              <label for="checkout-email">Email address</label>
+              <input type="email" id="checkout-email" name="email" required />
+              <div class="field-error-msg">Please enter a valid email address.</div>
+            </div>
+            <div class="field">
+              <label for="address">Address</label>
+              <input type="text" id="address" name="address" required />
+              <div class="field-error-msg">Please enter your address.</div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" required />
+                <div class="field-error-msg">Please enter your city.</div>
+              </div>
+              <div class="field">
+                <label for="postcode">Postcode</label>
+                <input type="text" id="postcode" name="postcode" required />
+                <div class="field-error-msg">Please enter your postcode.</div>
+              </div>
+            </div>
+            <div class="field">
+              <label for="country">Country</label>
+              <select id="country" name="country" required>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Ireland">Ireland</option>
+                <option value="United States">United States</option>
+                <option value="Germany">Germany</option>
+                <option value="Australia">Australia</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="checkout-section">
+            <h2>Payment</h2>
+            <p style="font-size:0.82rem;color:var(--ink-soft);margin-top:calc(var(--space-3) * -1);">Demo checkout — no real payment is processed, don't enter real card details.</p>
+            <div class="field">
+              <label for="card-name">Name on card</label>
+              <input type="text" id="card-name" name="card-name" required />
+              <div class="field-error-msg">Please enter the name on the card.</div>
+            </div>
+            <div class="field">
+              <label for="card-number">Card number</label>
+              <input type="text" id="card-number" name="card-number" inputmode="numeric" placeholder="4242 4242 4242 4242" required />
+              <div class="field-error-msg">Please enter a valid card number.</div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="card-expiry">Expiry (MM/YY)</label>
+                <input type="text" id="card-expiry" name="card-expiry" placeholder="MM/YY" required />
+                <div class="field-error-msg">Please enter a valid expiry date.</div>
+              </div>
+              <div class="field">
+                <label for="card-cvc">CVC</label>
+                <input type="text" id="card-cvc" name="card-cvc" inputmode="numeric" placeholder="123" required />
+                <div class="field-error-msg">Please enter a valid CVC.</div>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Place order</button>
+        </form>
+
+        <aside class="order-summary" aria-label="Order summary">
+          <h2>Order summary</h2>
+          <div id="checkout-items"></div>
+          <div style="border-top:1px solid var(--line);margin:var(--space-4) 0;"></div>
+          <div id="checkout-summary-rows"></div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">The Considered <span class="brand-mark">Market</span></a>
+          <p>Considered essentials for daily life — outdoors, home, tech and everyday carry.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="shop.html">All products</a></li>
+            <li><a href="shop.html#outdoors">Outdoors</a></li>
+            <li><a href="shop.html#home">Home</a></li>
+            <li><a href="shop.html#tech">Tech</a></li>
+            <li><a href="shop.html#fashion">Fashion</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Account</h4>
+          <ul>
+            <li><a href="account/login.html">Login</a></li>
+            <li><a href="account/profile.html">My orders</a></li>
+            <li><a href="cart.html">Cart</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Newsletter</h4>
+          <form id="newsletter-form" novalidate>
+            <div class="field">
+              <label for="newsletter-email">Email address</label>
+              <input type="email" id="newsletter-email" name="email" placeholder="you@example.com" required />
+              <div class="field-error-msg">Please enter a valid email address.</div>
+            </div>
+            <div class="hp-field" aria-hidden="true">
+              <label for="newsletter-company">Company</label>
+              <input type="text" id="newsletter-company" name="company" tabindex="-1" autocomplete="off" />
+            </div>
+            <button type="submit" class="btn btn-gold btn-block">Subscribe</button>
+          </form>
+          <p class="newsletter-success" role="status">✓ You're on the list — check your inbox.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 The Considered Market. Demo storefront — built by Sai Kumar Sandra.</span>
+        <span>Privacy · Terms · Accessibility</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cookie-consent" class="cookie-consent" role="dialog" aria-label="Cookie consent" hidden>
+    <p><strong>We use cookies.</strong> This helps us remember your cart and preferences. Manage your choice below.</p>
+    <div class="cookie-actions">
+      <button type="button" class="btn btn-primary btn-small" data-cookie-accept>Accept all</button>
+      <button type="button" class="btn btn-outline btn-small" data-cookie-reject>Reject non-essential</button>
+    </div>
+  </div>
+
+  <div id="confirmation-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Order confirmation" hidden>
+    <div class="modal-card">
+      <span class="eyebrow modal-eyebrow">Order placed</span>
+      <h3>Thank you — your order is confirmed</h3>
+      <p>Order <strong id="confirm-order-id"></strong> for <strong id="confirm-total"></strong> has been placed. This is a demo store, so no real payment was taken and no email will actually arrive.</p>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-primary" id="confirmation-continue">Continue shopping</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>
